@@ -58,4 +58,6 @@ module de1_soc_example(
 //  Structural coding
 //=======================================================
 
+assign LEDR = SW;
+
 endmodule
