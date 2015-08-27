@@ -53,11 +53,19 @@ module de1_soc_example(
 //=======================================================
 //  REG/WIRE declarations
 //=======================================================
+wire [ 3: 0 ] hex_lowers;
+
 
 //=======================================================
 //  Structural coding
 //=======================================================
 
 assign LEDR = SW;
+assign { HEX3[ 3 ], HEX2[ 3 ], HEX1[ 3 ], HEX0[ 3 ] } = ~hex_lowers;
+
+logic_demo demonstration(
+             .in_values( KEY ),
+             .out_values( hex_lowers )
+           );
 
 endmodule
