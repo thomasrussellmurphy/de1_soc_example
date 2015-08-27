@@ -43,8 +43,9 @@ timing
 *.sopc_builder
 *.summary
 *.tcl
-*.txt # Explicitly add any text files used
+*.txt
 *~
 *example*
+*rtl_netlist
 *sopc_*
-PLLJ_PLLSPE_INFO.txt # The generated PLL specification file
+PLLJ_PLLSPE_INFO.txt
