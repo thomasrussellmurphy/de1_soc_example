@@ -60,8 +60,19 @@ wire [ 3: 0 ] hex_lowers;
 //  Structural coding
 //=======================================================
 
+// Send out the desired visible signals
 assign LEDR = SW;
+// Active low translation for lighting segments
 assign { HEX3[ 3 ], HEX2[ 3 ], HEX1[ 3 ], HEX0[ 3 ] } = ~hex_lowers;
+
+// Turn off the unused 7-segment display segments
+assign {HEX0[6:4], HEX0[2:0]} = ~6'b0;
+assign {HEX1[6:4], HEX1[2:0]} = ~6'b0;
+assign {HEX2[6:4], HEX2[2:0]} = ~6'b0;
+assign {HEX3[6:4], HEX3[2:0]} = ~6'b0;
+assign {HEX4[6:4], HEX4[2:0]} = ~6'b0;
+assign {HEX5[6:4], HEX5[2:0]} = ~6'b0;
+// HEX4 and HEX5 will have their lower segments lit, still
 
 logic_demo demonstration(
              .in_values( KEY ),
