@@ -56,7 +56,6 @@ module de1_soc_example(
 wire [ 3: 0 ] hex_lowers;
 wire hex_blink_lower;
 
-
 //=======================================================
 //  Structural coding
 //=======================================================
@@ -83,6 +82,7 @@ logic_demo demonstration(
            );
 counter blink(
           .clk( CLOCK_50 ),
-          .counter_msb( hex_blink_lower )
+          .counter_msb( hex_blink_lower ),
+          .counter_internal_byte( GPIO_0[ 7: 0 ] )
         );
 endmodule
